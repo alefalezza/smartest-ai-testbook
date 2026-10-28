@@ -1,0 +1,7 @@
+{
+  "name": "smartest-ai-testbook-specs",
+  "private": true,
+  "devDependencies": {
+    "@fission-ai/openspec": "^1.15.0"
+  }
+}

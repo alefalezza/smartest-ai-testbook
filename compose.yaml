@@ -1,0 +1,16 @@
+services:
+  typescript:
+    build: ./typescript
+    working_dir: /workspace
+    volumes:
+      - ./typescript:/workspace
+      - /workspace/node_modules
+    stdin_open: true
+    tty: true
+  python:
+    build: ./python
+    working_dir: /workspace
+    volumes:
+      - ./python:/workspace
+    stdin_open: true
+    tty: true

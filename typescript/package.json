@@ -1,0 +1,35 @@
+{
+  "name": "smartest-ai-testbook",
+  "version": "1.0.0",
+  "description": "> Progettazione del dominio e del design object-oriented per un MVP di valutazione delle risposte generate da LLM.   > Liberamente ispirato al progetto [yTestbook](https://ytestbook.intesys.it/)",
+  "main": "src/index.ts",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "test": "node --import tsx --test src/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alefalezza/smartest-ai-testbook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/alefalezza/smartest-ai-testbook#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "dependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15"
+  },
+  "engines": {
+    "node": "24.22.1"
+  },
+  "volta": {
+    "node": "24.22.1"
+  }
+}
