@@ -48,3 +48,14 @@ Verificare che siano comprensibili il passo successivo, i dati da inserire, la s
 
 - [requirements.md](./doc/requirements.md): requisiti MVP e confini;
 - [test-case-examples.md](./doc/test-case-examples.md): test, evaluator e esempio di report;
+
+## Verifica del codice
+
+Le specifiche in `openspec/` e i documenti in `doc/` sono condivisi. Le implementazioni e le rispettive dipendenze si trovano in `typescript/` e `python/`.
+
+- Dalla radice, `npm ci` installa OpenSpec; `npx openspec validate --all` verifica le specifiche.
+- In `typescript/`, `npm ci` installa le dipendenze, `npm test` esegue i test e `npm run typecheck` verifica i tipi.
+- In `python/`, `python -m unittest discover -s tests` esegue i test con Python 3.12 o successivo, senza dipendenze aggiuntive.
+- Dalla radice, `docker compose up --build typescript` avvia l'ambiente TypeScript; `docker compose run --build --rm python` esegue i test Python. I due servizi possono essere usati separatamente.
+
+Quando si modifica una specifica, i task devono indicare l'implementazione e la verifica per ciascun linguaggio, segnalando eventuali differenze di avanzamento.
