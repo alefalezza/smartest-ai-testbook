@@ -1,16 +1,19 @@
 services:
   typescript:
     build: ./typescript
-    working_dir: /workspace
-    volumes:
-      - ./typescript:/workspace
-      - /workspace/node_modules
-    stdin_open: true
-    tty: true
+    ports:
+      - "3001:3001"
+    environment:
+      WEB_ORIGIN: ${WEB_ORIGIN:-http://localhost:3000}
   python:
     build: ./python
-    working_dir: /workspace
+    ports:
+      - "3002:3002"
+    environment:
+      WEB_ORIGIN: ${WEB_ORIGIN:-http://localhost:3000}
+  web-client:
+    build: ./web-client
+    ports:
+      - "3000:80"
     volumes:
-      - ./python:/workspace
-    stdin_open: true
-    tty: true
+      - ./web-client/public/configuration.js:/usr/share/nginx/html/configuration.js:ro

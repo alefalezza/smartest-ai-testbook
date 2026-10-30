@@ -6,6 +6,8 @@ COPY package*.json ./
 
 RUN npm ci
 
-# EXPOSE 3000
+COPY tsconfig.json ./
+COPY src ./src
 
-CMD ["npm", "run", "dev"]
+EXPOSE 3001
+CMD ["node", "--import", "tsx", "src/index.ts"]
