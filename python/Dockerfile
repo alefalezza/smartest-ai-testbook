@@ -7,4 +7,4 @@ COPY src ./src
 RUN uv sync --locked
 COPY tests ./tests
 EXPOSE 3002
-CMD ["uv", "run", "--no-sync", "python", "-m", "smartest_ai_testbook.web_server"]
+CMD ["uv", "run", "--no-sync", "python", "-m", "smartest_ai_testbook"]
