@@ -1,9 +1,15 @@
 from typing import Protocol
-from uuid import uuid4
+from uuid import UUID, uuid4
 
 from smartest_ai_testbook.test_creation.expectation import IExpectation
 
 class ITestCase(Protocol):
+    id: UUID
+    prompt: str
+    goldenReference: str | None
+    variables: dict[str, str]
+    rubric: str | None
+    expectations: list[IExpectation]
     def __init__(
         self,
         prompt: str, 
