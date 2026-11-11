@@ -19,7 +19,7 @@ if (!['typescript', 'python', 'client'].includes(target)) throw new Error(`Unkno
 const config = JSON.parse(await readFile(join(root, `api/generators/${target}.json`), 'utf8'));
 const expectedOutputs = {
   typescript: 'typescript/src/web-server/generated/schema.ts',
-  python: 'python/src/web_server/generated',
+  python: 'python/src/smartest_ai_testbook/web_server/generated',
   client: 'web-client/src/generated',
 };
 const destination = resolve(root, config.output);
@@ -49,7 +49,7 @@ try {
       '--global-property', config.globalProperties ?? 'apiTests=false,modelTests=false,apiDocs=false,modelDocs=false'],
       { stdio: ['ignore', 'pipe', 'pipe'] });
     if (target === 'python') {
-      artifact = join(temporary, 'src/web_server/generated');
+      artifact = join(temporary, 'src/smartest_ai_testbook/web_server/generated');
     } else {
       artifact = join(temporary, 'client-source');
       await mkdir(artifact);
